@@ -28,8 +28,8 @@ public class CakeController implements View.OnClickListener, CompoundButton.OnCh
         if (b == false) {
             this.cakeModel.hasCandles = false;
         }
-        else {
-            // cake has candles
+        else if (b == true) {
+            this.cakeModel.hasCandles = true;
         }
         this.cakeView.invalidate();
     }
@@ -38,24 +38,7 @@ public class CakeController implements View.OnClickListener, CompoundButton.OnCh
     public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
         if(!fromUser) return;
         Log.d("On Progress Change", "Progress Changed");
-        if (progress == 0) {
-            this.cakeModel.candlesOnCake = 0;
-        }
-        else if (progress == 1) {
-            this.cakeModel.candlesOnCake = 1;
-        }
-        else if (progress == 2) {
-            this.cakeModel.candlesOnCake = 2;
-        }
-        else if (progress == 3) {
-            this.cakeModel.candlesOnCake = 3;
-        }
-        else if (progress == 4) {
-            this.cakeModel.candlesOnCake = 4;
-        }
-        else if (progress == 5) {
-            this.cakeModel.candlesOnCake = 5;
-        }
+        this.cakeModel.candlesOnCake = progress;
         this.cakeView.invalidate();
     }
 
