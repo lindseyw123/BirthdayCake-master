@@ -7,6 +7,7 @@ import android.view.View;
 import android.util.Log;
 import android.widget.Button;
 import android.widget.Switch;
+import android.widget.SeekBar;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -27,6 +28,10 @@ public class MainActivity extends AppCompatActivity {
         Switch candlesSwitch = findViewById(R.id.switch2);
         // set on checked change listener for switch
         candlesSwitch.setOnCheckedChangeListener(cakeController);
+        // reference to "How many candles?" seek bar
+        SeekBar howManyCandlesSeekBar = findViewById(R.id.seekBar);
+        // set on seek bar change listener for how many candles
+        howManyCandlesSeekBar.setOnSeekBarChangeListener(cakeController);
     }
 
     public void goodbye(View button) {

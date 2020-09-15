@@ -132,10 +132,35 @@ public class CakeView extends SurfaceView {
         //Then a second cake layer
         canvas.drawRect(cakeLeft, top, cakeLeft + cakeWidth, bottom, cakePaint);
 
-        //Now two candles in the center
-        drawCandle(canvas, cakeLeft + cakeWidth/3 - candleWidth/3, cakeTop);
-        drawCandle(canvas, cakeLeft + 2*cakeWidth/3 - 2*candleWidth/3, cakeTop);
-
+        //Now candles in the center
+        if (cakeModel.candlesOnCake == 0) {
+            // no candles
+        }
+        else if (cakeModel.candlesOnCake == 1) {
+            drawCandle(canvas, cakeLeft + cakeWidth / 2 - candleWidth / 2, cakeTop);
+        }
+        else if (cakeModel.candlesOnCake == 2) {
+            drawCandle(canvas, cakeLeft + cakeWidth / 3 - candleWidth / 3, cakeTop);
+            drawCandle(canvas, cakeLeft + 2 * cakeWidth / 3 - 2 * candleWidth / 3, cakeTop);
+        }
+        else if (cakeModel.candlesOnCake == 3) {
+            drawCandle(canvas, cakeLeft + cakeWidth / 4 - candleWidth / 4, cakeTop);
+            drawCandle(canvas, cakeLeft + 2 * cakeWidth / 4 - 2 * candleWidth / 4, cakeTop);
+            drawCandle(canvas, cakeLeft + 3 * cakeWidth / 4 - 3 * candleWidth / 4, cakeTop);
+        }
+        else if (cakeModel.candlesOnCake == 4) {
+            drawCandle(canvas, cakeLeft + cakeWidth / 5 - candleWidth / 5, cakeTop);
+            drawCandle(canvas, cakeLeft + 2 * cakeWidth / 5 - 2 * candleWidth / 5, cakeTop);
+            drawCandle(canvas, cakeLeft + 3 * cakeWidth / 5 - 3* candleWidth / 5, cakeTop);
+            drawCandle(canvas, cakeLeft + 4 * cakeWidth / 5 - 4 * candleWidth / 5, cakeTop);
+        }
+        else if (cakeModel.candlesOnCake == 5) {
+            drawCandle(canvas, cakeLeft + cakeWidth / 6 - candleWidth / 6, cakeTop);
+            drawCandle(canvas, cakeLeft + 2 * cakeWidth / 6 - 2 * candleWidth / 6, cakeTop);
+            drawCandle(canvas, cakeLeft + 3 * cakeWidth / 6 - 3 * candleWidth / 6, cakeTop);
+            drawCandle(canvas, cakeLeft + 4 * cakeWidth / 6 - 4 * candleWidth / 6, cakeTop);
+            drawCandle(canvas, cakeLeft + 5 * cakeWidth / 6 - 5 * candleWidth / 6, cakeTop);
+        }
     }//onDraw
 
 }//class CakeView
